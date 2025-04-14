@@ -17,8 +17,9 @@ def operaciones(a: int,b: int,operacion: str):
             else: return a / b
         case _:
             return "No ingresaste un operador valido"
-"""Casos de prueba: """
-
+```
+Casos de prueba:
+```python
 print(operaciones(4,3,"+"))
 print(operaciones(4,4,"-"))
 print(operaciones(5,2,"*"))
@@ -35,4 +36,5 @@ print(operaciones(4,2,"´"))
 16
 No se puede dividir por 0.
 6.0
+No ingresaste un operador valido
 ```
