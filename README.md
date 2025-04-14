@@ -63,7 +63,7 @@ def palindromo(palabra: str) -> str:
         return f"{palabra} es un palíndromo."
     else: return f"{palabra} no es un palíndromo."
 ```
-*Casos de prueba: *
+*Casos de prueba:*
 ```python
 print(palindromo("ÁÉÍÓÚÓÍÉÁ"))
 print(palindromo("AEIOOIEÁ"))
@@ -94,7 +94,7 @@ def determinarprimos(lista: list[int]) -> list[int]:
             primos.append(numero)
     return primos
 ```
-*Casos de prueba: *
+*Casos de prueba:*
 ```python
 print(determinarprimos([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]))
 print(determinarprimos([11, 21, 34, 46, 58, 60, 71, 81, 91, 101]))
@@ -103,5 +103,31 @@ print(determinarprimos([11, 21, 34, 46, 58, 60, 71, 81, 91, 101]))
 ```
 [2, 3, 5, 7]
 [11, 71, 101]
+```
+### 4. Escribir una función que reciba una lista de números enteros y retorne la mayor suma entre dos elementos consecutivos.
+Definimos la función que nos va a determinar la suma mayor entre dos numeros consecutivos de una lista, se crean dos avriables igual a 0, y una i = 0 que aumentará con cada iteración mientras sea menor a la cantidad de elementos de la lista menos uno, con cada iteración se sumará el numero ubicado en la posición i y el número siguiente a ese, se comparará con la variable de sumamayor, y si es mayor a esta, suma mayor tomará su valor, sino sumamayor seguirá con el valor de antes, de esta forma, cuando encuentre la suma mayor, esta quedará almacenada en esa variable pues ninguna de las otras sumas la podrá reemplazar, y al final la función nos retornará el valor de la suma mayor.
+```python
+def mayorsuma(lista: list[int]) -> int:
+    sumauno = 0
+    sumamayor = 0
+    i = 0
+    while i < len(lista) - 1:
+        sumauno = lista[i] + lista[i + 1]
 
+        if sumauno >= sumamayor:
+            sumamayor = sumauno
+            
+        i += 1
+
+    return sumamayor
+```
+*Casos de prueba:*
+```python
+print(mayorsuma([11, 21, 34, 46, 58, 60, 71, 81, 91, 101]))
+print(mayorsuma([30, 45, 67, 234, 31, 24]))
+```
+*Resultado por terminal:*
+```
+192
+301
 ```
