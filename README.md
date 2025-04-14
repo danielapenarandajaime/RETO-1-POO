@@ -3,7 +3,7 @@
 ### 1. Crear una función que realice operaciones básicas (suma, resta, multiplicación, división) entre dos números, según la elección del usuario, la forma de entrada de la función será los dos operandos y el caracter usado para la operación. entrada: (1,2,"+"), salida (3).
 Asignamos el nombre "operaciones" a nuestra función, y utilizando la estructura match-case le damos intrucciones a esta, para que, dependiendo del operador que ingrese el usuario, haga la operación correspondiente, y como ultima opción tenemos nuestro caso por defecto, en el que si no se cumplen ninguna de las condiciones anteriores nos va a decir que no ingresamos un operador valido.
 ```python
-def operaciones(a: int,b: int,operacion: str):
+def operaciones(a: int,b: int,operacion: str) -> int:
     match operacion:
         case "+":
             return a + b
@@ -18,7 +18,7 @@ def operaciones(a: int,b: int,operacion: str):
         case _:
             return "No ingresaste un operador valido"
 ```
-Casos de prueba:
+*Casos de prueba:*
 ```python
 print(operaciones(4,3,"+"))
 print(operaciones(4,4,"-"))
