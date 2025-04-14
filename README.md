@@ -20,13 +20,13 @@ def operaciones(a: int,b: int,operacion: str) -> int:
 ```
 *Casos de prueba:*
 ```python
-print(operaciones(4,3,"+"))
-print(operaciones(4,4,"-"))
-print(operaciones(5,2,"*"))
-print(operaciones(8,2,"x"))
-print(operaciones(10,0,"/"))
-print(operaciones(12,2,"÷"))
-print(operaciones(4,2,"´"))
+print(operaciones(4, 3, "+"))
+print(operaciones(4, 4, "-"))
+print(operaciones(5, 2, "*"))
+print(operaciones(8, 2, "x"))
+print(operaciones(10, 0, "/"))
+print(operaciones(12, 2, "÷"))
+print(operaciones(4, 2, "´"))
 ```
 *Resultado por terminal:*
 ```
@@ -45,20 +45,20 @@ Lo primero que hice fue crear la función palindromo, poniendo de parametro un s
 def palindromo(palabra: str) -> str:
     palabramodificada = palabra.lower()
     palabramodificada = palabramodificada.replace('á', 'a') \
-    .replace('é', 'e').replace('í','i').replace('ó','o').replace('ú','u')
-    i: int = len(palabramodificada)-1
+    .replace('é', 'e').replace('í', 'i').replace('ó', 'o').replace('ú', 'u')
+    i: int = len(palabramodificada) - 1
     j: int = 0
     palindromo: bool = False
-    while i>len(palabra)/2 and j<len(palabra)/2:
+    while i > len(palabra) / 2 and j < len(palabra) / 2:
 
-        if palabramodificada[i]==palabramodificada[j]:
+        if palabramodificada[i] == palabramodificada[j]:
             palindromo = True
         else: 
             palindromo = False 
 
             break
-        i-=1
-        j+=1
+        i -= 1
+        j += 1
     if palindromo == True:
         return f"{palabra} es un palíndromo."
     else: return f"{palabra} no es un palíndromo."
@@ -74,4 +74,34 @@ print(palindromo("rana"))
 ÁÉÍÓÚÓÍÉÁ es un palíndromo.
 AEIOOIEÁ es un palíndromo.
 rana no es un palíndromo.
+```
+### 3. Escribir una función que reciba una lista de números y devuelva solo aquellos que son primos. La función debe recibir una lista de enteros y retornar solo aquellos que sean primos.
+Al crear la función definí el parametro de entrada (una lista de enteros) y el tipo de parametro de salida (una lista de enteros), luego de eso cree una lista de primos, que va a ser en la que se guardarán todos los primos que se encuentren en la lista de entrada. Hacemos un ciclo for, que tomará cada elemento de la lista, para evaluar si es primo o no, lo hará creando una variable boolean "esprimo", que será por defecto "True", lo que nos demostrará si es lo contrario es un while en el que dividiremos el numero por un j=2 que aumentará 1 con cada iteración mientras que j * j sea menor o igual a el numero, de esta forma si se encuentran divisores nos romperá el ciclo y obtendremos que el numero no es primo, de lo contrario sabremos que el número es primo y se guardará en la lista de primos que se retornará al final de la función.
+```python
+def determinarprimos(lista: list[int]) -> list[int]:
+    primos: list[int] = []
+    for numero in lista:
+        esprimo: bool = True
+        j: int = 2
+        divisores: list[int] = []
+        while j * j <= numero:
+            if numero % j == 0:
+                esprimo = False
+                break
+            j += 1
+
+        if esprimo == True and numero >= 2:
+            primos.append(numero)
+    return primos
+```
+*Casos de prueba: *
+```python
+print(determinarprimos([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]))
+print(determinarprimos([11, 21, 34, 46, 58, 60, 71, 81, 91, 101]))
+```
+*Resultado por terminal:*
+```
+[2, 3, 5, 7]
+[11, 71, 101]
+
 ```
