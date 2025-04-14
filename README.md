@@ -1,7 +1,7 @@
 # RETO-1-POO
 ## Reto 1 de POO, Daniela Peñaranda Jaime.
 ### 1. Crear una función que realice operaciones básicas (suma, resta, multiplicación, división) entre dos números, según la elección del usuario, la forma de entrada de la función será los dos operandos y el caracter usado para la operación. entrada: (1,2,"+"), salida (3).
-Asignamos el nombre "operaciones" a nuestra función, y utilizando la estructura match-case le damos intrucciones a esta, para que, dependiendo del operador que ingrese el usuario, haga la operación correspondiente, y como ultima opción tenemos nuestro caso por defecto, en el que si no se cumplen ninguna de las condiciones anteriores nos va a decir que no ingresamos un operador valido.
+Asignamos el nombre "operaciones" a nuestra función, que  recibirá tres valores de entrada, dos enteros y un string y nos devolverá un entero. Luego, utilizando la estructura match-case le damos intrucciones a esta, para que, dependiendo del operador que ingrese el usuario, haga la operación correspondiente, y como ultima opción tenemos nuestro caso por defecto, en el que si no se cumplen ninguna de las condiciones anteriores nos va a decir que no ingresamos un operador valido.
 ```python
 def operaciones(a: int,b: int,operacion: str) -> int:
     match operacion:
@@ -105,7 +105,7 @@ print(determinarprimos([11, 21, 34, 46, 58, 60, 71, 81, 91, 101]))
 [11, 71, 101]
 ```
 ### 4. Escribir una función que reciba una lista de números enteros y retorne la mayor suma entre dos elementos consecutivos.
-Definimos la función que nos va a determinar la suma mayor entre dos numeros consecutivos de una lista, se crean dos avriables igual a 0, y una i = 0 que aumentará con cada iteración mientras sea menor a la cantidad de elementos de la lista menos uno, con cada iteración se sumará el numero ubicado en la posición i y el número siguiente a ese, se comparará con la variable de sumamayor, y si es mayor a esta, suma mayor tomará su valor, sino sumamayor seguirá con el valor de antes, de esta forma, cuando encuentre la suma mayor, esta quedará almacenada en esa variable pues ninguna de las otras sumas la podrá reemplazar, y al final la función nos retornará el valor de la suma mayor.
+Definimos la función que tonará como valor de entrada una lista de enteros y nos retornará un entero, se crean dos variables igual a 0, y una i = 0 que aumentará con cada iteración mientras sea menor a la cantidad de elementos de la lista menos uno, con cada iteración se sumará el número ubicado en la posición i y el número siguiente a ese, se comparará con la variable de sumamayor, y si es mayor a esta, sumamayor tomará su valor, sino sumamayor seguirá con el valor de antes, de esta forma, cuando encuentre la suma mayor, esta quedará almacenada en esa variable y ninguna de las otras sumas la podrá reemplazar, al final la función nos retornará el valor de la suma mayor.
 ```python
 def mayorsuma(lista: list[int]) -> int:
     sumauno = 0
@@ -131,3 +131,4 @@ print(mayorsuma([30, 45, 67, 234, 31, 24]))
 192
 301
 ```
+### 5. Escribir una función que reciba una lista de números enteros y retorne la mayor suma entre dos elementos consecutivos.
