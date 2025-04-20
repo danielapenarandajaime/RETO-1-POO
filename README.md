@@ -105,7 +105,7 @@ print(determinarprimos([11, 21, 34, 46, 58, 60, 71, 81, 91, 101]))
 [11, 71, 101]
 ```
 ### 4. Escribir una función que reciba una lista de números enteros y retorne la mayor suma entre dos elementos consecutivos.
-Definimos la función que tonará como valor de entrada una lista de enteros y nos retornará un entero, se crean dos variables igual a 0, y una i = 0 que aumentará con cada iteración mientras sea menor a la cantidad de elementos de la lista menos uno, con cada iteración se sumará el número ubicado en la posición i y el número siguiente a ese, se comparará con la variable de sumamayor, y si es mayor a esta, sumamayor tomará su valor, sino sumamayor seguirá con el valor de antes, de esta forma, cuando encuentre la suma mayor, esta quedará almacenada en esa variable y ninguna de las otras sumas la podrá reemplazar, al final la función nos retornará el valor de la suma mayor.
+Definimos la función que tomará como valor de entrada una lista de enteros y nos retornará un entero, se crean dos variables igual a 0, y una i = 0 que aumentará con cada iteración mientras sea menor a la cantidad de elementos de la lista menos uno, con cada iteración se sumará el número ubicado en la posición i y el número siguiente a ese, se comparará con la variable de sumamayor, y si es mayor a esta, sumamayor tomará su valor, sino sumamayor seguirá con el valor de antes, de esta forma, cuando encuentre la suma mayor, esta quedará almacenada en esa variable y ninguna de las otras sumas la podrá reemplazar, al final la función nos retornará el valor de la suma mayor.
 ```python
 def mayorsuma(lista: list[int]) -> int:
     sumauno = 0
@@ -131,4 +131,4 @@ print(mayorsuma([30, 45, 67, 234, 31, 24]))
 192
 301
 ```
-### 5. Escribir una función que reciba una lista de números enteros y retorne la mayor suma entre dos elementos consecutivos.
+### 5. Escribir una función que reciba una lista de string y retorne unicamente aquellos elementos que tengan los mismos caracteres. e.g. entrada: ["amor", "roma", "perro"], salida ["amor", "roma"]
